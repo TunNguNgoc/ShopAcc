@@ -1,0 +1,21 @@
+﻿@model IEnumerable<ShopAcc.Acc>
+
+@{
+    ViewBag.Title = "Acc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Acc</h2>
+@foreach (var item in Model)
+{
+
+<div class="container">
+        <div class="card">
+            <img class="imgcard" src="@Html.DisplayFor(modelItem => item.hinh)" alt="Denim Jeans" style="width:100%">
+            <h1>@Html.DisplayFor(modelItem => item.ten)</h1>
+            <p class="price">@Html.DisplayFor(modelItem => item.gia)</p>
+            <p><button>@Html.ActionLink("Order", "Order", new { id = item.id }) </button></p>
+        </div>
+</div>
+    }
+
